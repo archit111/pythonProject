@@ -249,17 +249,25 @@ class  LinkedList:
 
             temp1=temp1.next
 
-
+    def friendsremoval(self):
+        temp=self.head
+        while (temp is not None  and temp.next is not None ):
+            if temp.data <temp.next.data :
+                print (temp.next.data)
+                temp=temp.next
+            else:
+                print (temp.data)
+                temp=temp.next.next
 
 
 # code execution starts here
 if __name__=='__main__':
 
     lis=LinkedList()
-    lis.head=Node(1)  # create a node with element 1
-    second =Node(2)    # create a node with element 2
-    third=Node(4)
-    fourth=Node(7)
+    lis.head=Node(2)  # create a node with element 1
+    second =Node(1)    # create a node with element 2
+    third=Node(7)
+    fourth=Node(4)
     fifth=Node(9)
     sixth=Node(10)
     '''lis = LinkedList()
@@ -301,4 +309,5 @@ if __name__=='__main__':
     #print(lis.isLoopinLinkedList(1,1))
     #lis.removenodeofgivenreference(9)
     #lis.swapnopdes()
-    print (lis.fractionalnode(1))
+    #print (lis.fractionalnode(1))
+    lis.friendsremoval()

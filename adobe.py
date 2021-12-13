@@ -860,6 +860,156 @@ print (os.environ['Company'])'''
 
 
 
+'''import pandas as pd
+import matplotlib.pyplot as plt
+
+data={
+    "calories":[100,50,120],
+    "duration":[50,40,45]
+}
+df=pd.DataFrame(data)
+print(df)'''
+
+'''from graphene import ObjectType , String , Schema
+class Query(ObjectType):
+    hello=String(name=String(default_value="stranger"))
+    goodbye=String()
+
+    def resolve_hello(root,info,name):
+        return f'hello{name}!'
+
+    def resolve_goodbye (root,info):
+        return 'See ya!'
+
+schema=Schema(query=Query)
+
+
+
+query_string = '{ hello }'
+result = schema.execute(query_string)
+print(result.data['hello'])
+# "Hello stranger!"'''
+
+
+'''def sort_rotated_array(arr):
+    li=[]
+    for i in range(len(arr)-1):
+        if (arr[i]>arr[i+1]):
+            li.append(arr[i+1:])
+            li.append(arr[0:i+1])
+            break
+    return li
+
+arr=[2,3,4,1]
+print(sort_rotated_array(arr))'''
+
+
+'''def see(arr):
+    k=[0]*len(arr)
+    for i in arr:
+        k[i]+=1
+    for i in range (len(arr)):
+        if k[i]==1:
+            return i
+
+arr=[1,1,3,3,2,4,4]
+print(see(arr))'''
+
+'''import math
+def delhivery(arr,n):
+    dict={}
+    li=[]
+    for i in range (len(arr)):
+        diff=math.fabs(n-arr[i])
+        li.append(diff)
+        dict[arr[i]]=diff
+    for k,v in dict.items():
+        if v==min(li):
+            return k
+n=11
+#arr=[2,5,6,7,8,8,9]
+arr=[1,2,4,5,6,6,8,9]
+print(delhivery(arr,n))'''
+
+'''def delhivery(arr):
+    i=0
+    j=len(arr)-1
+    left=0
+    right=0
+    left = left + arr[i]
+    right = right + arr[j]
+    while (j>0 and i<len(arr)):
+
+        if left >right:
+            j = j - 1
+            right = right + arr[j]
+
+        elif left < right:
+            i = i + 1
+            left = left + arr[i]
+
+        elif left==right:
+            return "Possible"
+
+
+    return "Not Possible"
+
+#arr=[1,2,3,4,5,5]
+#arr=[4,1,2,3]
+arr=[4,3,2,1]
+print(delhivery(arr))'''
+
+
+
+'''def toptwowords(s):
+    l=s.split(" ")
+    for i in l:
+        h[i]=h[i]+1
+
+
+h=[]
+s = "I am a good boy I I am good am girl "
+toptwowords(s)'''
+
+'''To sort the dictionary according to value in revrrse order
+dict ={1:2,3:4,4:3,2:1,0:0}
+dict =sorted(dict.items(),key=lambda item:item[0],reverse=True)
+print (dict)'''
+
+
+'''def list_comprehension(li):
+    return [i*2 for i in li if i%2!=0]
+
+li=[2,5,7,8]
+print (list_comprehension(li))'''
+
+'''numbers =[i*10 for i in range (10)]
+print (numbers)'''
+
+
+'''def wrappers (a):
+    def add(b):
+        c=a+b
+        return c
+    return add
+
+wrapper=wrappers(10)
+print (wrapper(20))'''
+
+'''s="I am the geeky Programmer"
+n=s.split(' ')
+print (n)
+s1=" ".join(n)
+print(s1)'''
+
+li=[1,6,3,2,7]
+new_li=[i for i in li if i%2==0]
+print (new_li)
+
+
+
+
+
 
 
 
